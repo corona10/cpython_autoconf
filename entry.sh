@@ -8,8 +8,8 @@ if [ ! -e ${SENTINEL} ]; then
     echo "ERROR: ${SENTINEL} not found "
     echo "Did you forget to mount Python work directory with '-v.:/src'?"
     echo
-    echo "  docker run -v.:/src tiran/cpython_autoconf"
-    echo "  podman run -v.:/src:Z tiran/cpython_autoconf"
+    echo "  docker run -v.:/src dongheena/cpython_autoconf"
+    echo "  podman run -v.:/src:Z dongheena/cpython_autoconf"
     exit 2
 fi
 
