@@ -1,7 +1,6 @@
 # cpython_autoconf
-
-Container image with autotools to regenerate Python's configure script.
-Fork from https://github.com/tiran/cpython_autoconf
+- Container image with autotools to regenerate Python's configure script.
+- Fork from https://github.com/tiran/cpython_autoconf
 
 ## Fedora, CentOS and other SELinux-enabled systems with podman
 
