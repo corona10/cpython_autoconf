@@ -32,7 +32,7 @@ jobs:
         with:
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ github.event.release.tag_name }}
-          archs: amd64, arm64, arm/v7
+          archs: amd64, arm64
           containerfiles: |
             ./Dockerfile
 
