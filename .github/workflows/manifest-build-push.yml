@@ -31,7 +31,7 @@ jobs:
         uses: redhat-actions/buildah-build@main
         with:
           image: ${{ env.IMAGE_NAME }}
-          tags: ${GITHUB_REF#refs/tags/}
+          tags: $github.ref
           archs: amd64, arm64, arm/v7
           containerfiles: |
             ./Dockerfile
