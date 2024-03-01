@@ -1,13 +1,10 @@
-# This workflow will perform a test whenever there
-# is some change in code done to ensure that the changes
-# are not buggy and we are getting the desired output.
 name: Build and Push Manifest
 on:
   release:
     types: [published]
 
 jobs:
-  push-quay:
+  push-ghcr:
     name: Build and push manifest
     runs-on: ubuntu-latest
 
