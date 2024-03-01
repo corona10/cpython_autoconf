@@ -6,12 +6,12 @@
 
 ```shell
 $ cd cpython
-$ podman run --rm --pull=always -v$(pwd):/src:Z quay.io/dongheena/cpython_autoconf:271
+$ podman run --rm --pull=always -v$(pwd):/src:Z ghcr.io/corona10/cpython_autoconf:271
 ```
 
 ## Arch, Debian, Gentoo, Ubuntu
 
 ```shell
 $ cd cpython
-$ podman run --rm --pull=always -v$(pwd):/src quay.io/dongheena/cpython_autoconf:271
+$ podman run --rm --pull=always -v$(pwd):/src ghcr.io/corona10/cpython_autoconf:271
 ```
