@@ -17,4 +17,4 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Build the Docker image
-        run: docker buildx build --platform linux/amd64,linux/arm64 -t cpython_autoconf:test .
+        run: docker buildx build --platform linux/amd64,linux/arm64 -t cpython_autoconf:test .
