@@ -13,7 +13,9 @@ if [ ! -e ${SENTINEL} ]; then
     exit 2
 fi
 
-echo "Rebuilding configure script"
-cd $SRC
-autoreconf -ivf -Werror $@
-echo "Done"
+if [ "$#" = "0" ]; then
+    echo "Rebuilding configure script using $(autoconf --version | head -n 1)"
+    exec gosu autoreconf -ivf -Werror $@
+fi
+
+exec "$@"
