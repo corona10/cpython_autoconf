@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build Container file for amd64 and arm64
+    name: Build Dockerfile for amd64 and arm64
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Push to Registry action
@@ -18,5 +18,11 @@ jobs:
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Build the Docker image
-        run: docker buildx build --platform linux/amd64,linux/arm64 -t cpython_autoconf:test .
+      - name: Build Dockerfile
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: false
+          tags: |
+            ghcr.io/corona10/cpython_autoconf
