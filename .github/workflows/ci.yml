@@ -10,7 +10,13 @@ on:
 jobs:
   build:
     name: Build Dockerfile for amd64 and arm64
+    strategy:
+      fail-fast: false
+      matrix:
+        autoconf_version: ["2.69", "2.71", "2.72"]
     runs-on: ubuntu-latest
+    env:
+      TAG: autoconf:${{ matrix.autoconf_version }}-${{ github.run_id }}
     steps:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v4
@@ -22,7 +28,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
-          push: false
-          tags: |
-            ghcr.io/corona10/cpython_autoconf
+          build-args: AUTOCONF_VERSION=${{ matrix.autoconf_version }}
+          load: true
+          tags: ${{ env.TAG }}
+      - name: Test
+        run: docker run --rm $TAG autoconf --version | grep ${{ matrix.autoconf_version }}
