@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build Dockerfile for amd64 and arm64
+    name: Build and test
     strategy:
       fail-fast: false
       matrix:
