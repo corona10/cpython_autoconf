@@ -18,7 +18,7 @@ if [ "$#" = "0" ]; then
     fi
 
     echo "Rebuilding configure script using $($AUTOCONF --version | head -n 1)"
-    exec gosu $AUTORECONF -ivf -Werror $@
+    exec $AUTORECONF -ivf -Werror $@
 fi
 
 exec "$@"
