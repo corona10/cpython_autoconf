@@ -6,7 +6,7 @@ AUTOCONF=$BIN/autoconf
 AUTORECONF=$BIN/autoreconf
 
 if [ "$#" = "0" ]; then
-    local SENTINEL=/src/pyconfig.h.in
+    SENTINEL=/src/pyconfig.h.in
 
     if [ ! -e ${SENTINEL} ]; then
         echo "ERROR: ${SENTINEL} not found "
